@@ -1,7 +1,8 @@
+import { CustomBaseEntity } from '@database/baseEntity';
 import { Entity, Column, PrimaryColumn } from 'typeorm';
 
-@Entity()
-export class Product {
+@Entity('product')
+export class Product extends CustomBaseEntity {
   @PrimaryColumn()
   id: string;
 

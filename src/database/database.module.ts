@@ -20,8 +20,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           ...sslOptions,
           ...dataSourceOptions,
           autoLoadEntities: true, // Dev purposes only
-          migrations: ['dist/migrations/*.js'],
-          migrationsRun: configService.get<string>('DB_MIGRATIONS_RUN') === 'true' ? true : false,
+          //migrations: ['dist/migrations/*.js'],
+          //migrationsRun: configService.get<string>('DB_MIGRATIONS_RUN') === 'true' ? true : false,
           synchronize: true, //configService.get<string>('DB_SYNCHRONIZE') === 'true' ? true : false,
         };
       },

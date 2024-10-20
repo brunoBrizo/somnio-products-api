@@ -22,7 +22,7 @@
       "@filters/*": ["src/common/filters/*"],
       "@interceptors/*": ["src/common/interceptors/*"],
       "@database/*": ["src/database/*"],
-      "@products/*": ["src/products/*"],
+      "@products/*": ["src/products/*"]
     }
   }
 }

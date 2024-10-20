@@ -14,6 +14,7 @@ FROM node:21-alpine3.19 AS build
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
 
+RUN echo "Database url ::: &DATABASE_URL";
 WORKDIR /usr/src/app
 
 COPY --from=deps /usr/src/app/node_modules ./node_modules

@@ -16,3 +16,7 @@ Here are the key technical decisions I've made:
    - **Cloud Run**: For running the containerized application in a fully managed, serverless environment.
 
 6. **Unit Testing**: The codebase includes a suite of unit tests. These tests cover critical functionality, ensuring code reliability and making it easier to maintain and refactor the application as it grows.
+
+---
+
+## Deployed URL: https://products-api-15378855831.southamerica-east1.run.app/api/products

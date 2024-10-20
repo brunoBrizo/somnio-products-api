@@ -8,4 +8,11 @@ Here are the key technical decisions I've made:
 
 3. **Database Transactions**: All database operations are wrapped in transactions. This ensures data integrity and allows for atomic operations, meaning all products in a batch are either saved successfully or rolled back in case of an error.
 
-4. **SQL Database**: I selected a SQL database for its reliability, structured data handling, and scalability. This choice aligns with the product data requirements and supports a long-term growth strategy.
+4. **PostgreSQL Database**: We've chosen PostgreSQL as our SQL database, specifically using the cloud-native offering from https://neon.tech/. This selection combines the reliability, structured data handling, and scalability of PostgreSQL with Neon's serverless, auto-scaling, and branching capabilities.
+
+5. **Google Cloud Deployment**: The application is deployed on Google Cloud Platform using the following services:
+   - **Artifact Registry**: For storing and managing Docker container images.
+   - **Cloud Build**: For automating the build and deployment process.
+   - **Cloud Run**: For running the containerized application in a fully managed, serverless environment.
+
+6. **Unit Testing**: The codebase includes a suite of unit tests. These tests cover critical functionality, ensuring code reliability and making it easier to maintain and refactor the application as it grows.

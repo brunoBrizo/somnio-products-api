@@ -4,7 +4,7 @@ steps:
   args:
     - -c
     - |
-      docker build -t southamerica-east1-docker.pkg.dev/somnio-products-api/somnio-products-api/products-api -f Dockerfile --platform=linux/amd64 --build-arg DATABASE_URL=$$DATABASE_URL .
+      docker build -t southamerica-east1-docker.pkg.dev/somnio-products-api/somnio-products-api/products-api -f Dockerfile --platform=linux/amd64 --build-arg PRODUCTS_DATABASE_URL=$$DATABASE_URL .
   secretEnv: ['DATABASE_URL']
 
 - name: 'gcr.io/cloud-builders/docker'
@@ -16,7 +16,8 @@ steps:
 
 availableSecrets:
   secretManager:
-  - versionName: projects/15378855831/secrets/DATABASE_URL/versions/1
+  - versionName: projects/15378855831/secrets/PRODUCTS_DATABASE_URL/versions/1
     env: 'DATABASE_URL'
+    
 options:
   logging: CLOUD_LOGGING_ONLY

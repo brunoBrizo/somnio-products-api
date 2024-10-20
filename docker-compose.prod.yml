@@ -6,8 +6,8 @@ services:
       context: ./
       dockerfile: Dockerfile
       args:
-        - DATABASE_URL=${DATABASE_URL}
+        - PRODUCTS_DATABASE_URL=${PRODUCTS_DATABASE_URL}
     image: southamerica-east1-docker.pkg.dev/somnio-products-api/somnio-products-api/products-api
     environment:
       - PORT=3000
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=${PRODUCTS_DATABASE_URL}

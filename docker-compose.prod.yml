@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  products-api:
+    build: 
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        - DATABASE_URL=${DATABASE_URL}
+    image: products-api
+    environment:
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}

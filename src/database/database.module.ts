@@ -9,7 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: async (configService: ConfigService) => {
-        const isProduction = configService.get('STAGE') === 'prod';
+        const isProduction = configService.get('NODE_ENV') === 'production';
 
         const sslOptions = {
           ssl: isProduction,
@@ -22,7 +22,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
           autoLoadEntities: true, // Dev purposes only
           //migrations: ['dist/migrations/*.js'],
           //migrationsRun: configService.get<string>('DB_MIGRATIONS_RUN') === 'true' ? true : false,
-          synchronize: true, //configService.get<string>('DB_SYNCHRONIZE') === 'true' ? true : false,
+          synchronize: configService.get<string>('DB_SYNCHRONIZE') === 'true' ? true : false,
         };
       },
     }),
